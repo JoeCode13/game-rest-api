@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express, { Application } from "express";
 import indexRoutes from "./routes/index.routes";
 import GamesRoutes from "./routes/games.routes";

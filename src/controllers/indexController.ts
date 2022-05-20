@@ -5,7 +5,7 @@ class IndexController{
 
     public index (req: Request, res: Response){
 
-        res.send("Hello");
+        res.send("This rest api works");
     }
    
 }

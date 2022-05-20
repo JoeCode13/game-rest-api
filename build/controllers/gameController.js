@@ -16,7 +16,7 @@ const database_1 = __importDefault(require("../database"));
 class GameController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            database_1.default.query('SELECT * FROM games', function (err, results, fields) {
+            database_1.default.query("SELECT * FROM games", function (err, results, fields) {
                 if (err) {
                     res.json(err);
                 }
@@ -25,21 +25,24 @@ class GameController {
         });
     }
     listId(req, res) {
-        database_1.default.query('SELECT * FROM games WHERE id = ?', [req.params.id], (err, results, fields) => {
+        database_1.default.query("SELECT * FROM games WHERE id = ?", [req.params.id], (err, results, fields) => {
             res.json(results);
         });
     }
     create(req, res) {
-        database_1.default.query('INSERT INTO games SET ?', [req.body]);
-        res.json({ msg: 'Game Saved!' });
+        //* Create a game
+        database_1.default.query("INSERT INTO games SET ?", [req.body]);
+        res.json({ msg: "Game Saved!" });
     }
     update(req, res) {
-        database_1.default.query('UPDATE games set ? WHERE id = ?', [req.body, req.params.id]);
-        res.json({ msg: 'game updated!' });
+        //! Update Method
+        database_1.default.query("UPDATE games set ? WHERE id = ?", [req.body, req.params.id]);
+        res.json({ msg: "game updated!" });
     }
     delete(req, res) {
-        database_1.default.query('DELETE FROM games WHERE id = ?', [req.params.id]);
-        res.json({ msg: 'Game deleted' });
+        //! Delete Method
+        database_1.default.query("DELETE FROM games WHERE id = ?", [req.params.id]);
+        res.json({ msg: "Game deleted" });
     }
 }
 const gamesController = new GameController();

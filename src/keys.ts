@@ -1,8 +1,11 @@
 export default{
     database: {
-        host: 'localhost',
-        user: 'admin',
-        password: '1234',
-        database: 'db_games'
+        host: process.env.host,
+        user: process.env.username,
+        password: process.env.password,
+        database: process.env.database,
+        ssl: {
+            rejectUnauthorized: false
+        }
     }
 }
