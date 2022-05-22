@@ -21,7 +21,7 @@ npm install
 4. Install TypeScript to build the app
 
 ```bash
-npm i -g typescript
+npm i typescript
 ```
 5. Build the project 
 ```bash
